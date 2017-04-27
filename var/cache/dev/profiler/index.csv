@@ -250,3 +250,14 @@ d84081,127.0.0.1,GET,http://localhost:8000/js/main.js,1493330114,,404
 82e588,127.0.0.1,GET,http://localhost:8000/css/main.css,1493330117,,404
 58f1e5,127.0.0.1,GET,http://localhost:8000/js/main.js,1493330117,5428ba,200
 5428ba,127.0.0.1,GET,http://localhost:8000/js/main.js,1493330117,,404
+33984e,127.0.0.1,GET,http://localhost:8000/chat,1493330350,,200
+22d8e4,127.0.0.1,GET,http://localhost:8000/css/main.css,1493330351,857f8c,200
+857f8c,127.0.0.1,GET,http://localhost:8000/css/main.css,1493330351,,404
+5d4872,127.0.0.1,GET,http://localhost:8000/js/main.js,1493330351,91384f,200
+91384f,127.0.0.1,GET,http://localhost:8000/js/main.js,1493330351,,404
+8d5b9a,127.0.0.1,POST,http://localhost:8000/chat,1493330353,,302
+61f315,127.0.0.1,GET,http://localhost:8000/chat,1493330353,,200
+c6316b,127.0.0.1,GET,http://localhost:8000/css/main.css,1493330353,0adaf2,200
+0adaf2,127.0.0.1,GET,http://localhost:8000/css/main.css,1493330353,,404
+951ed8,127.0.0.1,GET,http://localhost:8000/js/main.js,1493330354,ad60b5,200
+ad60b5,127.0.0.1,GET,http://localhost:8000/js/main.js,1493330354,,404
