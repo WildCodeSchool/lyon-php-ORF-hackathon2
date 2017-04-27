@@ -2,6 +2,8 @@
 
 namespace ChatBundle\Entity;
 
+use ChatBundle\Repository\MessageRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToOne;
 
@@ -102,27 +104,5 @@ class Message
         return $this->datetime;
     }
 
-    /**
-     * Set userId
-     *
-     * @param \ChatBundle\Entity\Category $userId
-     *
-     * @return Message
-     */
-    public function setUserId(\ChatBundle\Entity\Category $userId = null)
-    {
-        $this->user_id = $userId;
 
-        return $this;
-    }
-
-    /**
-     * Get userId
-     *
-     * @return \ChatBundle\Entity\Category
-     */
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
 }
