@@ -36,6 +36,11 @@ class Message
      */
     private $datetime;
 
+    public function __construct()
+    {
+        $this->datetime = new \DateTime();
+    }
+
     /**
      * @var
      *

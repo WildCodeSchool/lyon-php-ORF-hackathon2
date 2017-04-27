@@ -38,7 +38,7 @@ class DefaultController extends Controller
         $em->persist($user);
         $em->flush();
 
-        return $this->redirectToRoute('chat_chat_index');
+        return $this->redirectToRoute('add_message');
     }
 
         $session = $request->getSession();
