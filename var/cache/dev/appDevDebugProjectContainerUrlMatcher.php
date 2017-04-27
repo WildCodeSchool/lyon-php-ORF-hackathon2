@@ -105,9 +105,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // chat_chat_index
+        // add_message
         if ($pathinfo === '/chat') {
-            return array (  '_controller' => 'ChatBundle\\Controller\\ChatController::indexAction',  '_route' => 'chat_chat_index',);
+            return array (  '_controller' => 'ChatBundle\\Controller\\ChatController::addAction',  '_route' => 'add_message',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
