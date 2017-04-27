@@ -105,13 +105,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // chat_default_index
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'chat_default_index');
-            }
-
-            return array (  '_controller' => 'ChatBundle\\Controller\\DefaultController::indexAction',  '_route' => 'chat_default_index',);
+        // chat_chat_index
+        if ($pathinfo === '/chat') {
+            return array (  '_controller' => 'ChatBundle\\Controller\\ChatController::indexAction',  '_route' => 'chat_chat_index',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

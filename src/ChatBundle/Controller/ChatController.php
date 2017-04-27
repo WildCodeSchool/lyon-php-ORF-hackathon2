@@ -5,13 +5,13 @@ namespace ChatBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class DefaultController extends Controller
+class ChatController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/chat")
      */
     public function indexAction()
     {
-        return $this->render('ChatBundle:Default:index.html.twig');
+        return $this->render('@Chat/Default/chat.html.twig');
     }
 }
