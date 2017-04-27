@@ -5,6 +5,7 @@ namespace ChatBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToMany;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -42,7 +43,7 @@ class User
 
     /**
      * @var string
-     *
+     * @Assert\IsNull()
      * @ORM\Column(name="picture", type="string", length=255)
      */
     private $picture;

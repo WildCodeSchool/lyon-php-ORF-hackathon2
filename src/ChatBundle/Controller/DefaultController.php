@@ -28,6 +28,19 @@ class DefaultController extends Controller
             ->add('submit', SubmitType::class, array('label' => 'Envoyer'))
             ->getForm();
 
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $user = $form->getData();
+
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($user);
+        $em->flush();
+
+        return $this->redirectToRoute('chat');
+    }
+
         $session = $request->getSession();
         $session->start();
 
