@@ -2,10 +2,9 @@ body {
     background-size: cover;
     margin: 0 auto;
 }
-h2 {
+h3, h4 {
     text-align: center;
 }
 .home {
     margin: 0 auto;
-
 }

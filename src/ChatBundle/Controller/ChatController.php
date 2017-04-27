@@ -2,7 +2,7 @@
 
 namespace ChatBundle\Controller;
 
-use ChatBundle\Entity\User;
+use ChatBundle\Entity\Message;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,11 +19,10 @@ class ChatController extends Controller
 
     public function indexAction(Request $request)
     {
-        $user = new User();
+        $message = new Message();
 
-        $form = $this->createFormBuilder($user)
-            ->add('name', TextType::class)
-            ->add('baseline', TextType::class)
+        $form = $this->createFormBuilder($message)
+            ->add('message', TextType::class)
             ->add('submit', SubmitType::class, array('label' => 'Enter'))
             ->getForm();
 
@@ -40,7 +39,7 @@ class ChatController extends Controller
         return $this->redirectToRoute('chat');
     }
 
-        return $this->render('ChatBundle:Default:index.html.twig',
+        return $this->render('ChatBundle:Default:chat.html.twig',
             array(
                 'form' => $form->createView(),
             ));

@@ -40,7 +40,7 @@ class DefaultController extends Controller
         return $this->redirectToRoute('chat');
     }
 
-        return $this->render('ChatBundle:Default:index.html.twig',
+        return $this->render('ChatBundle:Default:chat.html.twig',
             array(
                 'form' => $form->createView(),
             ));
