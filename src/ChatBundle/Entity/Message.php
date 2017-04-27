@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToOne;
 
+
 /**
  * Message
  *
@@ -38,10 +39,16 @@ class Message
      */
     private $datetime;
 
+    public function __construct()
+    {
+        $this->datetime = new \DateTime();
+    }
+
+
     /**
      * @var
      *
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="users")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="users", cascade={"persist"})
      */
     private $user_id;
 
