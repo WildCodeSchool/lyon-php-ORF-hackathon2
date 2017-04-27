@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ChatController extends Controller
 {
+
     /**
      * @param Request $request
      * @return Response

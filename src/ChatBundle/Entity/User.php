@@ -134,8 +134,5 @@ class User
     /**
      * User constructor.
      */
-    public function __construct()
-{
-    $this->products = new ArrayCollection();
-}
+
 }

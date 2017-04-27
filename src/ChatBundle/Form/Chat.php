@@ -2,6 +2,7 @@
 
 namespace ChatBundle\Form;
 
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -16,6 +17,8 @@ class Chat extends AbstractType
     {
         $builder->add('message', TextType::class, array("label" => "Message"))
             ->add('submit', SubmitType::class, ['label' => 'Enregistrer']);
+
+
     }
 
     public function configureOptions(OptionsResolver $resolver)
