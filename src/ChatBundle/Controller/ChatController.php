@@ -9,11 +9,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class DefaultController extends Controller
+class ChatController extends Controller
 {
     /**
      * @param Request $request
-     * @Route("/", name="homepage")
+     * @Route("/chat", name="chat")
      * @return \Symfony\Component\HttpFoundation\Response
      */
 
