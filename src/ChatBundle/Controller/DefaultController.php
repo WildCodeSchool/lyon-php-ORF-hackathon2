@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class DefaultController extends Controller
 {
@@ -24,12 +25,28 @@ class DefaultController extends Controller
         $form = $this->createFormBuilder($user)
             ->add('name', TextType::class)
             ->add('baseline', TextType::class)
-            ->add('submit', SubmitType::class, array('label' => 'Enter'))
+            ->add('submit', SubmitType::class, array('label' => 'Envoyer'))
             ->getForm();
+
+        $session = $request->getSession();
+        $session->start();
+
+        // set and get session attributes
+        $session->set('name', 'roxanne');
+        $user = $session->get('name');
+
+        // set flash messages
+        $session->getFlashBag()->add('notice', 'Session ouverte');
+
+        // retrieve messages
+        foreach ($session->getFlashBag()->get('notice', array()) as $message) {
+            echo '<div class="flash-notice">'.$message.'</div>';
+        }
 
         return $this->render('ChatBundle:Default:index.html.twig',
             array(
                 'form' => $form->createView(),
+                'user' => $user
             ));
     }
 }

@@ -110,13 +110,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'ChatBundle\\Controller\\ChatController::indexAction',  '_route' => 'chat_chat_index',);
         }
 
-        // chat_connect_index
+        // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'chat_connect_index');
+                return $this->redirect($pathinfo.'/', 'homepage');
             }
 
-            return array (  '_controller' => 'ChatBundle\\Controller\\ConnectController::indexAction',  '_route' => 'chat_connect_index',);
+            return array (  '_controller' => 'ChatBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

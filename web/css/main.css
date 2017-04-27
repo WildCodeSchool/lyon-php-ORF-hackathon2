@@ -1,0 +1,8 @@
+body {
+    background-image: url("/img/fundo.jpg");
+    background-size: cover;
+    margin: 0 auto;
+}
+div {
+    margin: 0 auto;
+}

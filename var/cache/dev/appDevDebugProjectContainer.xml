@@ -89,7 +89,7 @@
     <parameter key="database_port">null</parameter>
     <parameter key="database_name">chackathon</parameter>
     <parameter key="database_user">root</parameter>
-    <parameter key="database_password">Letellier14760</parameter>
+    <parameter key="database_password">azerty</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
@@ -455,7 +455,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>gKBjrnZTtZ</argument>
                 <argument>0</argument>
-                <argument>iwvn1dpM5pMt5edB+jYUyW</argument>
+                <argument>gS1GDDc-9nCo-cP+7M1R4A</argument>
                 <argument>/home/wilder/git_repositories/symfony/lyon-php-ORF-hackathon2/var/cache/dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -638,7 +638,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>UN0AENUZvh</argument>
       <argument>0</argument>
-      <argument>iwvn1dpM5pMt5edB+jYUyW</argument>
+      <argument>gS1GDDc-9nCo-cP+7M1R4A</argument>
       <argument>/home/wilder/git_repositories/symfony/lyon-php-ORF-hackathon2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -648,7 +648,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>HpI1ethrdf</argument>
       <argument>0</argument>
-      <argument>iwvn1dpM5pMt5edB+jYUyW</argument>
+      <argument>gS1GDDc-9nCo-cP+7M1R4A</argument>
       <argument>/home/wilder/git_repositories/symfony/lyon-php-ORF-hackathon2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1641,7 +1641,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5902324c0f9c57.89842306</argument>
+            <argument>59025d91d55022.97730899</argument>
           </service>
         </argument>
       </argument>
@@ -1789,7 +1789,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5902324c0f9c57.89842306</argument>
+            <argument>59025d91d55022.97730899</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2161,7 +2161,7 @@
         <argument key="port">null</argument>
         <argument key="dbname">chackathon</argument>
         <argument key="user">root</argument>
-        <argument key="password">Letellier14760</argument>
+        <argument key="password">azerty</argument>
         <argument key="charset">UTF8</argument>
         <argument key="driverOptions" type="collection"/>
         <argument key="defaultTableOptions" type="collection"/>
@@ -2791,6 +2791,9 @@
       <call method="addPath">
         <argument>/home/wilder/git_repositories/symfony/lyon-php-ORF-hackathon2/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
         <argument>WebProfiler</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/wilder/git_repositories/symfony/lyon-php-ORF-hackathon2/app/Resources/views</argument>
       </call>
       <call method="addPath">
         <argument>/home/wilder/git_repositories/symfony/lyon-php-ORF-hackathon2/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form</argument>
