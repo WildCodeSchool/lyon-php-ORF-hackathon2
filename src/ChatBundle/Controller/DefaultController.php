@@ -6,9 +6,9 @@ use ChatBundle\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\HttpFoundation\Session\Session;
 
 class DefaultController extends Controller
 {
@@ -38,7 +38,7 @@ class DefaultController extends Controller
         $em->persist($user);
         $em->flush();
 
-        return $this->redirectToRoute('chat');
+        return $this->redirectToRoute('chat_chat_index');
     }
 
         $session = $request->getSession();

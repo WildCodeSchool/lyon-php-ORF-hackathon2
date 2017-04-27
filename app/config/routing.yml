@@ -3,8 +3,5 @@ chat:
     type:     annotation
     prefix:   /
 
-chat:
-    resource: "@ChatBundle/ChatController/"
-    type:     annotation
-    prefix:   /chat
+
 

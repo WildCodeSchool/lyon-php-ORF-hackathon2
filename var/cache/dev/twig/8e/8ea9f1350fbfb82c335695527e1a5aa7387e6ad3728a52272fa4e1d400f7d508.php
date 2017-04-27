@@ -21,60 +21,50 @@ class __TwigTemplate_16154df981102b42a4c596e5762507ac066ce78afd33dd0aa2de27d6236
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7e53a4ff230d3b67ee4303db5a2510ec1a0f9d72c0519365ec4f5d076747058a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_7e53a4ff230d3b67ee4303db5a2510ec1a0f9d72c0519365ec4f5d076747058a->enter($__internal_7e53a4ff230d3b67ee4303db5a2510ec1a0f9d72c0519365ec4f5d076747058a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ChatBundle:Default:index.html.twig"));
+        $__internal_be675564875fdae53b3b1f94e83bbd657aa713b29ab76ea53b6db2792c635fe4 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_be675564875fdae53b3b1f94e83bbd657aa713b29ab76ea53b6db2792c635fe4->enter($__internal_be675564875fdae53b3b1f94e83bbd657aa713b29ab76ea53b6db2792c635fe4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ChatBundle:Default:index.html.twig"));
 
-        $__internal_0d1aa5c0692b73e44cdc41702a572305897cb4ff707945811a9dca1d3df0a93c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_0d1aa5c0692b73e44cdc41702a572305897cb4ff707945811a9dca1d3df0a93c->enter($__internal_0d1aa5c0692b73e44cdc41702a572305897cb4ff707945811a9dca1d3df0a93c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ChatBundle:Default:index.html.twig"));
+        $__internal_3bf4818366b651e1015dc284978b3c32dead310b1b553bcba9f09d0ad73ce172 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_3bf4818366b651e1015dc284978b3c32dead310b1b553bcba9f09d0ad73ce172->enter($__internal_3bf4818366b651e1015dc284978b3c32dead310b1b553bcba9f09d0ad73ce172_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ChatBundle:Default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_7e53a4ff230d3b67ee4303db5a2510ec1a0f9d72c0519365ec4f5d076747058a->leave($__internal_7e53a4ff230d3b67ee4303db5a2510ec1a0f9d72c0519365ec4f5d076747058a_prof);
+        $__internal_be675564875fdae53b3b1f94e83bbd657aa713b29ab76ea53b6db2792c635fe4->leave($__internal_be675564875fdae53b3b1f94e83bbd657aa713b29ab76ea53b6db2792c635fe4_prof);
 
         
-        $__internal_0d1aa5c0692b73e44cdc41702a572305897cb4ff707945811a9dca1d3df0a93c->leave($__internal_0d1aa5c0692b73e44cdc41702a572305897cb4ff707945811a9dca1d3df0a93c_prof);
+        $__internal_3bf4818366b651e1015dc284978b3c32dead310b1b553bcba9f09d0ad73ce172->leave($__internal_3bf4818366b651e1015dc284978b3c32dead310b1b553bcba9f09d0ad73ce172_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_66dac03c3f0978e3edf52e470d8b55e7b41951421c0d0441119f85e672f71665 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_66dac03c3f0978e3edf52e470d8b55e7b41951421c0d0441119f85e672f71665->enter($__internal_66dac03c3f0978e3edf52e470d8b55e7b41951421c0d0441119f85e672f71665_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_3e80e32d8ec6cdbddfa7e1da8432c499a31c54e8547c482e192c4ef025b653fc = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_3e80e32d8ec6cdbddfa7e1da8432c499a31c54e8547c482e192c4ef025b653fc->enter($__internal_3e80e32d8ec6cdbddfa7e1da8432c499a31c54e8547c482e192c4ef025b653fc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_aa7db1217112ff4d739a2497fb18c9c3da89eff3494f17c429e7cd1e230be184 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_aa7db1217112ff4d739a2497fb18c9c3da89eff3494f17c429e7cd1e230be184->enter($__internal_aa7db1217112ff4d739a2497fb18c9c3da89eff3494f17c429e7cd1e230be184_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_46e40f6b8d10efe707daf6b14ac68dccffe5fb0b1daf165e4706027e1413e025 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_46e40f6b8d10efe707daf6b14ac68dccffe5fb0b1daf165e4706027e1413e025->enter($__internal_46e40f6b8d10efe707daf6b14ac68dccffe5fb0b1daf165e4706027e1413e025_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "
-<section>
-    <div class=\"container\">
+    <div class=\"container home\">
         <div class=\"row\">
-            <div class=\"col s12\"><h2>Welcome to the MiniChat</h2></div>
+            <div><h2>Welcome to the MiniChat</h2></div>
+                        <div>
+                            ";
+        // line 9
+        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 9, $this->getSourceContext()); })()), 'form');
+        echo "
 
-            <div class=\"col s3\">
-                ";
-        // line 11
-        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 11, $this->getSourceContext()); })()), 'form_start');
-        echo "
-                ";
-        // line 12
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 12, $this->getSourceContext()); })()), 'widget');
-        echo "
-                ";
-        // line 13
-        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 13, $this->getSourceContext()); })()), 'form_end');
-        echo "
-            </div>
-
-    </div>
-</section>
+                        </div>
+                    </div>
+                </div>
 ";
         
-        $__internal_aa7db1217112ff4d739a2497fb18c9c3da89eff3494f17c429e7cd1e230be184->leave($__internal_aa7db1217112ff4d739a2497fb18c9c3da89eff3494f17c429e7cd1e230be184_prof);
+        $__internal_46e40f6b8d10efe707daf6b14ac68dccffe5fb0b1daf165e4706027e1413e025->leave($__internal_46e40f6b8d10efe707daf6b14ac68dccffe5fb0b1daf165e4706027e1413e025_prof);
 
         
-        $__internal_66dac03c3f0978e3edf52e470d8b55e7b41951421c0d0441119f85e672f71665->leave($__internal_66dac03c3f0978e3edf52e470d8b55e7b41951421c0d0441119f85e672f71665_prof);
+        $__internal_3e80e32d8ec6cdbddfa7e1da8432c499a31c54e8547c482e192c4ef025b653fc->leave($__internal_3e80e32d8ec6cdbddfa7e1da8432c499a31c54e8547c482e192c4ef025b653fc_prof);
 
     }
 
@@ -90,7 +80,7 @@ class __TwigTemplate_16154df981102b42a4c596e5762507ac066ce78afd33dd0aa2de27d6236
 
     public function getDebugInfo()
     {
-        return array (  66 => 13,  62 => 12,  58 => 11,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  56 => 9,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     public function getSourceContext()
@@ -99,19 +89,15 @@ class __TwigTemplate_16154df981102b42a4c596e5762507ac066ce78afd33dd0aa2de27d6236
 
 {% block body %}
 
-<section>
-    <div class=\"container\">
+    <div class=\"container home\">
         <div class=\"row\">
-            <div class=\"col s12\"><h2>Welcome to the MiniChat</h2></div>
+            <div><h2>Welcome to the MiniChat</h2></div>
+                        <div>
+                            {{ form(form) }}
 
-            <div class=\"col s3\">
-                {{ form_start(form) }}
-                {{ form_widget(form) }}
-                {{ form_end(form) }}
-            </div>
-
-    </div>
-</section>
+                        </div>
+                    </div>
+                </div>
 {% endblock %}
 ", "ChatBundle:Default:index.html.twig", "/home/wilder/git_repositories/symfony/lyon-php-ORF-hackathon2/src/ChatBundle/Resources/views/Default/index.html.twig");
     }
