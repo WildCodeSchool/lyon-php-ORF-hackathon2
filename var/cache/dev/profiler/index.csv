@@ -39,3 +39,13 @@ ae21b8,127.0.0.1,GET,http://localhost:8000/css/main.css,1493312616,34194d,200
 34194d,127.0.0.1,GET,http://localhost:8000/css/main.css,1493312616,,404
 53adbd,127.0.0.1,GET,http://localhost:8000/js/main.js,1493312616,bffcbb,200
 bffcbb,127.0.0.1,GET,http://localhost:8000/js/main.js,1493312616,,404
+e52ebf,127.0.0.1,GET,http://localhost:8000/,1493315754,b5e2fd,200
+b5e2fd,127.0.0.1,GET,http://localhost:8000/,1493315754,,500
+48b3eb,127.0.0.1,GET,http://localhost:8000/,1493315832,686d7b,200
+686d7b,127.0.0.1,GET,http://localhost:8000/,1493315832,,500
+cfe6e0,127.0.0.1,GET,http://localhost:8000/,1493315854,f0c50d,200
+f0c50d,127.0.0.1,GET,http://localhost:8000/,1493315854,,500
+f1d04f,127.0.0.1,GET,http://localhost:8000/,1493316172,33f217,200
+33f217,127.0.0.1,GET,http://localhost:8000/,1493316172,,500
+478e7b,127.0.0.1,GET,http://localhost:8000/,1493323461,c005e7,200
+c005e7,127.0.0.1,GET,http://localhost:8000/,1493323461,,500
