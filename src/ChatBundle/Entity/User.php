@@ -2,6 +2,7 @@
 
 namespace ChatBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToMany;
 
@@ -25,11 +26,12 @@ class User
     /**
      * @var string
      *
-     * @OneToMany(targetEntity="ChatBundle\Entity\Message", mappedBy="user")
+     * @OneToMany(targetEntity="ChatBundle\Entity\Message", mappedBy="user_id")
      *
      * @ORM\Column(name="name", type="string", length=45)
      */
     private $name;
+
 
     /**
      * @var string
@@ -127,4 +129,12 @@ class User
     {
         return $this->picture;
     }
+
+    /**
+     * User constructor.
+     */
+    public function __construct()
+{
+    $this->products = new ArrayCollection();
+}
 }

@@ -25,8 +25,6 @@ class Message
     /**
      * @var string
      *
-     * @ManyToOne(targetEntity="ChatBundle\Entity\User", inversedBy="messages")
-     *
      * @ORM\Column(name="message", type="text")
      */
     private $message;
@@ -38,6 +36,12 @@ class Message
      */
     private $datetime;
 
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="users")
+     */
+    private $user_id;
 
 
     /**
@@ -96,5 +100,29 @@ class Message
     public function getDatetime()
     {
         return $this->datetime;
+    }
+
+    /**
+     * Set userId
+     *
+     * @param \ChatBundle\Entity\Category $userId
+     *
+     * @return Message
+     */
+    public function setUserId(\ChatBundle\Entity\Category $userId = null)
+    {
+        $this->user_id = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return \ChatBundle\Entity\Category
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
     }
 }
