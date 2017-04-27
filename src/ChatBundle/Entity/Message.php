@@ -44,7 +44,6 @@ class Message
         $this->datetime = new \DateTime();
     }
 
-
     /**
      * @var
      *
@@ -110,8 +109,6 @@ class Message
     {
         return $this->datetime;
     }
-
-
 
     /**
      * Set userId
