@@ -27,6 +27,7 @@ class ChatController extends Controller
         $user = $request->getSession()->get('user');
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository('ChatBundle:User')->find($user->getId());
+        $name = $em->getRepository('ChatBundle:User')->find($user->getName());
         $form = $this->createForm(Chat::class, $message);
 
         $form->handleRequest($request);
@@ -38,14 +39,11 @@ class ChatController extends Controller
             return $this->redirectToRoute('add_message');
         }
 
-        $chatContent = $this->getDoctrine()->getRepository('ChatBundle:User')->findAll();
-
         return $this->render('@Chat/Default/chat.html.twig', [
             'form' => $form->createView(),
             'user' => $user->getName(),
             'listMessage' => $listMessage,
-
-
+            'name' => $name
         ]);
     }
 }

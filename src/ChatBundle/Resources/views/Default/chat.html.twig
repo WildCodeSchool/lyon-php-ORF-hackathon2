@@ -5,10 +5,9 @@
     <ul>
     {% for message in listMessage %}
         <li>
-            <p>{{ message.user }}</p>
+            <p>{{message.user.name}}</p>
             <p>{{message.message}}</p>
             <p>{{message.datetime|date('Y-m-d h:m:s') }}</p>
-
         </li>
     {% endfor %}
     </ul>
