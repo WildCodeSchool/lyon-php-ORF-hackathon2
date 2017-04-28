@@ -2,8 +2,11 @@
 
 namespace ChatBundle\Entity;
 
+use ChatBundle\Repository\MessageRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToOne;
+
 
 /**
  * Message
@@ -25,8 +28,6 @@ class Message
     /**
      * @var string
      *
-     * @ManyToOne(targetEntity="ChatBundle\Entity\User", inversedBy="messages")
-     *
      * @ORM\Column(name="message", type="text")
      */
     private $message;
@@ -38,6 +39,17 @@ class Message
      */
     private $datetime;
 
+    public function __construct()
+    {
+        $this->datetime = new \DateTime();
+    }
+
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="users", cascade={"persist"})
+     */
+    private $user_id;
 
 
     /**
@@ -96,5 +108,29 @@ class Message
     public function getDatetime()
     {
         return $this->datetime;
+    }
+
+    /**
+     * Set userId
+     *
+     * @param \ChatBundle\Entity\User $userId
+     *
+     * @return Message
+     */
+    public function setUserId(\ChatBundle\Entity\User $userId = null)
+    {
+        $this->user_id = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return \ChatBundle\Entity\User
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
     }
 }

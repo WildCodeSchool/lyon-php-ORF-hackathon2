@@ -6,7 +6,6 @@ use ChatBundle\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
@@ -25,29 +24,13 @@ class DefaultController extends Controller
         $form = $this->createFormBuilder($user)
             ->add('name', TextType::class)
             ->add('baseline', TextType::class)
-            ->add('submit', SubmitType::class, array('label' => 'Envoyer'))
+            ->add('submit', SubmitType::class, array('label' => 'Enter'))
             ->getForm();
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $user = $form->getData();
-
-
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($user);
-        $em->flush();
-
-        return $this->redirectToRoute('add_message');
-
-        }
 
         return $this->render('ChatBundle:Default:index.html.twig',
             array(
                 'form' => $form->createView(),
-                'user' => $user
             ));
-
     }
 }
 
