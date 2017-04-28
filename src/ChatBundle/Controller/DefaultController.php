@@ -34,7 +34,7 @@ class DefaultController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
-            $request->getSession()->set('user', $user);
+            $request->getSession()->set('user', $user->getId());
             return $this->redirectToRoute('add_message');
         }
 

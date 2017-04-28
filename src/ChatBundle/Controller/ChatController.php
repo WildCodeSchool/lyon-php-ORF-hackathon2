@@ -26,27 +26,23 @@ class ChatController extends Controller
         $message = new Message();
         $user = $request->getSession()->get('user');
         $em = $this->getDoctrine()->getManager();
-        $user = $em->getRepository('ChatBundle:User')->find($user->getId());
+
+        $name = $em->getRepository('ChatBundle:User')->find($user);
         $form = $this->createForm(Chat::class, $message);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
-            $message->setUser($user);
+            $message->setUser($name);
             $em->persist($message);
             $em->flush();
             return $this->redirectToRoute('add_message');
         }
 
-        $chatContent = $this->getDoctrine()->getRepository('ChatBundle:User')->getClassName($user);
-
         return $this->render('@Chat/Default/chat.html.twig', [
             'form' => $form->createView(),
-            'user' => $user->getName(),
-            'chatContent'=>$chatContent,
-            'listMessage' => $listMessage,
-
-
+            'listMessages' => $listMessage,
+            'name' => $name
         ]);
     }
 }
