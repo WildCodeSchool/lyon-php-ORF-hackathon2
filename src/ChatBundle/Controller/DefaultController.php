@@ -38,7 +38,7 @@ class DefaultController extends Controller
             return $this->redirectToRoute('add_message');
         }
 
-        return $this->render('ChatBundle:Default:index.html.twig',
+        return $this->render('ChatBundle:Default:chat.html.twig',
             array(
                 'form' => $form->createView(),
                 'user' => $user
