@@ -3,9 +3,9 @@
     <div>
     <h1>Liste Messages</h1>
     <ul>
-    {% for messages in listMessages %}
+    {% for message in listMessage %}
         <li>
-            <p> {{ message.user_id }}</p>
+            <p>{{ message.userId }}</p>
             <p>{{message.message}}</p>
             <p>{{message.datetime|date('Y-m-d h:m:s') }}</p>
 

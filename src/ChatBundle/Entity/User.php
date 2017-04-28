@@ -27,7 +27,7 @@ class User
     /**
      * @var string
      *
-     * @OneToMany(targetEntity="ChatBundle\Entity\Message", mappedBy="user_id")
+     * @OneToMany(targetEntity="ChatBundle\Entity\Message", mappedBy="user_id", cascade={"persist"})
      *
      * @ORM\Column(name="name", type="string", length=45)
      */
