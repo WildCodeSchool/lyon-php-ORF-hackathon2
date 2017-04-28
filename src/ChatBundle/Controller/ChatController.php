@@ -23,12 +23,15 @@ class ChatController extends Controller
     public function addAction(Request $request)
     {
         $message = new Message();
+        $user = $request->getSession()->get('user');
         $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('ChatBundle:User')->find($user->getId());
         $form = $this->createForm(Chat::class, $message);
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form  ->isValid()){
+        if ($form->isSubmitted() && $form->isValid()){
+            $message->setUser($user);
             $em->persist($message);
             $em->flush();
             return $this->redirectToRoute('add_message');
@@ -41,26 +44,5 @@ class ChatController extends Controller
             'chatcontent' => $chatContent,
             'message' => $message,
         ]);
-
-
-        // SESSIONS MANAGEMENT
-
-
-        $session = $request->getSession();
-        $session->start();
-
-            // set and get session attributes
-        $session->set('name', '{{ user.name }}');
-        $user = $session->get('name');
-
-            // set flash messages
-        $session->getFlashBag()->add('notice', 'Session ouverte : {{ user.name }} ');
-
-        // retrieve messages
-        foreach ($session->getFlashBag()->get('notice', array()) as $message) {
-            echo '<div class="flash-notice">'.$message.'</div>';
-        }
-
     }
-
 }
