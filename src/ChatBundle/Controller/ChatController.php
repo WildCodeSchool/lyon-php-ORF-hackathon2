@@ -8,7 +8,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\Session;
 
 class ChatController extends Controller
 {
@@ -22,10 +21,13 @@ class ChatController extends Controller
 
     public function addAction(Request $request)
     {
+        $listMessage = $this->getDoctrine()->getRepository('ChatBundle:Message')->findAll();
+
         $message = new Message();
         $user = $request->getSession()->get('user');
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository('ChatBundle:User')->find($user->getId());
+        $name = $em->getRepository('ChatBundle:User')->find($user->getName());
         $form = $this->createForm(Chat::class, $message);
 
         $form->handleRequest($request);
@@ -37,12 +39,11 @@ class ChatController extends Controller
             return $this->redirectToRoute('add_message');
         }
 
-        $chatContent = $this->getDoctrine()->getRepository('ChatBundle:User')->findAll();
-
         return $this->render('@Chat/Default/chat.html.twig', [
-            'form'      =>  $form->createView(),
-            'chatcontent' => $chatContent,
-            'message' => $message,
+            'form' => $form->createView(),
+            'user' => $user->getName(),
+            'listMessage' => $listMessage,
+            'name' => $name
         ]);
     }
 }

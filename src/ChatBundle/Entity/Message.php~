@@ -51,4 +51,86 @@ class Message
         $this->datetime = new \DateTime();
     }
 
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set message
+     *
+     * @param string $message
+     *
+     * @return Message
+     */
+    public function setMessage($message)
+    {
+        $this->message = $message;
+
+        return $this;
+    }
+
+    /**
+     * Get message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    /**
+     * Set datetime
+     *
+     * @param \DateTime $datetime
+     *
+     * @return Message
+     */
+    public function setDatetime($datetime)
+    {
+        $this->datetime = $datetime;
+
+        return $this;
+    }
+
+    /**
+     * Get datetime
+     *
+     * @return \DateTime
+     */
+    public function getDatetime()
+    {
+        return $this->datetime;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \ChatBundle\Entity\User $user
+     *
+     * @return Message
+     */
+    public function setUser(\ChatBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \ChatBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }
