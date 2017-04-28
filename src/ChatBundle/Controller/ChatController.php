@@ -30,7 +30,7 @@ class ChatController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form  ->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $em->persist($message);
             $em->flush();
             return $this->redirectToRoute('add_message');
@@ -39,34 +39,30 @@ class ChatController extends Controller
         $chatContent = $this->getDoctrine()->getRepository('ChatBundle:User')->findAll();
 
         return $this->render('@Chat/Default/chat.html.twig', [
-            'form'      =>  $form->createView(),
+            'form' => $form->createView(),
             'chatcontent' => $chatContent,
             'message' => $message,
             'listMessage' => $listMessage,
 
         ]);
 
-
+    }
         // SESSIONS MANAGEMENT
-        $listMessage = $this->getDoctrine()->getRepository('ChatBundle:Message')->findAll();
 
-        $session = $request->getSession();
+        public  function $session = $request->getSession();{
         $session->start();
 
-            // set and get session attributes
-        $session->set('name', '{{ user.name }}');
-        $user = $session->get('name');
+        // set and get session attributes
+        $session->set('login', '{{ message.login }}');
+        $login = $session->get('login');
 
-            // set flash messages
-        $session->getFlashBag()->add('notice', 'Session ouverte : {{ user.name }} ');
+        // set flash messages
+
 
         // retrieve messages
-        foreach ($session->getFlashBag()->get('notice', array()) as $message) {
-            echo '<div class="flash-notice">'.$message.'</div>';
-        }
 
+        };
 
 
     }
 
-}

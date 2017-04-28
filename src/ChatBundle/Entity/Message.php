@@ -47,10 +47,16 @@ class Message
     /**
      * @var
      *
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="users", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="names", cascade={"persist"})
      */
     private $user_id;
 
+    /**
+     * @var
+     *
+     *@ORM\Column(name="login", type="string")
+     */
+    private $login;
 
     /**
      * Get id
@@ -132,5 +138,29 @@ class Message
     public function getUserId()
     {
         return $this->user_id;
+    }
+
+    /**
+     * Set login
+     *
+     * @param string $login
+     *
+     * @return Message
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+
+        return $this;
+    }
+
+    /**
+     * Get login
+     *
+     * @return string
+     */
+    public function getLogin()
+    {
+        return $this->login;
     }
 }

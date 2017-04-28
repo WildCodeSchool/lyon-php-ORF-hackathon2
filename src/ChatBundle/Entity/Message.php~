@@ -47,10 +47,16 @@ class Message
     /**
      * @var
      *
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="users", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="names", cascade={"persist"})
      */
     private $user_id;
 
+    /**
+     * @var
+     *
+     *@ORM\Column(name="login", type="string")
+     */
+    private $login;
 
     /**
      * Get id

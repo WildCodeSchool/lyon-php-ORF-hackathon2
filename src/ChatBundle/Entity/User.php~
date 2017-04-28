@@ -41,12 +41,7 @@ class User
      */
     private $baseline;
 
-    /**
-     * @var string
-     * @Assert\IsNull()
-     * @ORM\Column(name="picture", type="string", length=255)
-     */
-    private $picture;
+
 
 
     /**
@@ -114,25 +109,30 @@ class User
      *
      * @return User
      */
-    public function setPicture($picture)
+
+
+
+    /**
+     * Set users
+     *
+     * @param string $users
+     *
+     * @return User
+     */
+    public function setUsers($users)
     {
-        $this->picture = $picture;
+        $this->users = $users;
 
         return $this;
     }
 
     /**
-     * Get picture
+     * Get users
      *
      * @return string
      */
-    public function getPicture()
+    public function getUsers()
     {
-        return $this->picture;
+        return $this->users;
     }
-
-    /**
-     * User constructor.
-     */
-
 }
