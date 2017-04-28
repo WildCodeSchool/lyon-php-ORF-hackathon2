@@ -38,11 +38,12 @@ class ChatController extends Controller
             return $this->redirectToRoute('add_message');
         }
 
-        $chatContent = $this->getDoctrine()->getRepository('ChatBundle:User')->findAll();
+        $chatContent = $this->getDoctrine()->getRepository('ChatBundle:User')->getClassName($user);
 
         return $this->render('@Chat/Default/chat.html.twig', [
             'form' => $form->createView(),
             'user' => $user->getName(),
+            'chatContent'=>$chatContent,
             'listMessage' => $listMessage,
 
 
