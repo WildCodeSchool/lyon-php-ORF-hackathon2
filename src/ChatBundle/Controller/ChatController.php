@@ -8,7 +8,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\Session;
 
 class ChatController extends Controller
 {
@@ -25,12 +24,15 @@ class ChatController extends Controller
         $listMessage = $this->getDoctrine()->getRepository('ChatBundle:Message')->findAll();
 
         $message = new Message();
+        $user = $request->getSession()->get('user');
         $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('ChatBundle:User')->find($user->getId());
         $form = $this->createForm(Chat::class, $message);
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()){
+            $message->setUser($user);
             $em->persist($message);
             $em->flush();
             return $this->redirectToRoute('add_message');
@@ -40,29 +42,10 @@ class ChatController extends Controller
 
         return $this->render('@Chat/Default/chat.html.twig', [
             'form' => $form->createView(),
-            'chatcontent' => $chatContent,
-            'message' => $message,
+            'user' => $user->getName(),
             'listMessage' => $listMessage,
 
+
         ]);
-
     }
-        // SESSIONS MANAGEMENT
-
-        public  function $session = $request->getSession();{
-        $session->start();
-
-        // set and get session attributes
-        $session->set('login', '{{ message.login }}');
-        $login = $session->get('login');
-
-        // set flash messages
-
-
-        // retrieve messages
-
-        };
-
-
-    }
-
+}

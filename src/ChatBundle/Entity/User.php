@@ -2,7 +2,6 @@
 
 namespace ChatBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToMany;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -27,7 +26,6 @@ class User
     /**
      * @var string
      *
-     * @OneToMany(targetEntity="ChatBundle\Entity\Message", mappedBy="user_id", cascade={"persist"})
      *
      * @ORM\Column(name="name", type="string", length=45)
      */
@@ -43,11 +41,24 @@ class User
 
 
 
+    /**
+     * @var
+     * @OneToMany(targetEntity="ChatBundle\Entity\Message", mappedBy="user")
+     */
+    private $messages;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->messages = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -109,30 +120,54 @@ class User
      *
      * @return User
      */
-
-
-
-    /**
-     * Set users
-     *
-     * @param string $users
-     *
-     * @return User
-     */
-    public function setUsers($users)
+    public function setPicture($picture)
     {
-        $this->users = $users;
+        $this->picture = $picture;
 
         return $this;
     }
 
     /**
-     * Get users
+     * Get picture
      *
      * @return string
      */
-    public function getUsers()
+    public function getPicture()
     {
-        return $this->users;
+        return $this->picture;
+    }
+
+    /**
+     * Add message
+     *
+     * @param \ChatBundle\Entity\Message $message
+     *
+     * @return User
+     */
+    public function addMessage(\ChatBundle\Entity\Message $message)
+    {
+        $this->messages[] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Remove message
+     *
+     * @param \ChatBundle\Entity\Message $message
+     */
+    public function removeMessage(\ChatBundle\Entity\Message $message)
+    {
+        $this->messages->removeElement($message);
+    }
+
+    /**
+     * Get messages
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMessages()
+    {
+        return $this->messages;
     }
 }

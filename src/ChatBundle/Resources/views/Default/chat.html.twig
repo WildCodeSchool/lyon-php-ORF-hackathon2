@@ -5,7 +5,7 @@
     <ul>
     {% for message in listMessage %}
         <li>
-            <p>{{ message.userId }}</p>
+            <p>{{ message.user }}</p>
             <p>{{message.message}}</p>
             <p>{{message.datetime|date('Y-m-d h:m:s') }}</p>
 
