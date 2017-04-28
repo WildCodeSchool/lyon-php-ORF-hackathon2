@@ -39,6 +39,13 @@ class Message
      */
     private $datetime;
 
+    /**
+     * @var User
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="messages")
+     */
+    private $user;
+
     public function __construct()
     {
         $this->datetime = new \DateTime();
@@ -46,17 +53,9 @@ class Message
 
 
     /**
-     * @var
-     *
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="users", cascade={"persist"})
-     */
-    private $user_id;
-
-
-    /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -112,26 +111,26 @@ class Message
     }
 
     /**
-     * Set userId
+     * Set user
      *
-     * @param \ChatBundle\Entity\User $userId
+     * @param \ChatBundle\Entity\User $user
      *
      * @return Message
      */
-    public function setUserId(\ChatBundle\Entity\User $userId = null)
+    public function setUser(\ChatBundle\Entity\User $user = null)
     {
-        $this->user_id = $userId;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get userId
+     * Get user
      *
      * @return \ChatBundle\Entity\User
      */
-    public function getUserId()
+    public function getUser()
     {
-        return $this->user_id;
+        return $this->user;
     }
 }

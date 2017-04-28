@@ -1,7 +1,14 @@
-{% extends '::base.html.twig' %}
+{% extends '@Chat/base.html.twig' %}
 
 {% block body %}
 
-Hello World!
+    <div class="container home">
+        <div class="row">
+            <div><h2>Welcome to the MiniChat</h2></div>
+                        <div>
+                            {{ form(form) }}
 
+                        </div>
+                    </div>
+                </div>
 {% endblock %}

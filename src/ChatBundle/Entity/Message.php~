@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToOne;
 
+
 /**
  * Message
  *
@@ -39,17 +40,22 @@ class Message
     private $datetime;
 
     /**
-     * @var
+     * @var User
      *
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="users")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="messages")
      */
-    private $user_id;
+    private $user;
+
+    public function __construct()
+    {
+        $this->datetime = new \DateTime();
+    }
 
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -104,5 +110,27 @@ class Message
         return $this->datetime;
     }
 
+    /**
+     * Set user
+     *
+     * @param \ChatBundle\Entity\User $user
+     *
+     * @return Message
+     */
+    public function setUser(\ChatBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
 
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \ChatBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }
