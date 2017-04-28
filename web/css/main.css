@@ -7,3 +7,22 @@ h3, h4 {
 .home {
     margin: 0 auto;
 }
+.typeMessage {
+    border: 1px solid #d8d8d8;
+    padding: 50px;
+}
+.listMessages {
+    border: 1px solid #d8d8d8;
+    background-color: #cbcbcb;
+    padding: 130px;
+}
+.chatHeader {
+    border: 1px solid #d8d8d8;
+    padding: 20px;
+}
+.showUsername {
+    font-weight: bold;
+}
+.showBaseline {
+    font-style: italic;
+}

@@ -1,21 +1,22 @@
 {% extends '@Chat/base.html.twig' %}
+
 {% block body %}
-    <div>
-    <h1>Liste Messages</h1>
-    <ul>
-    {% for message in listMessage %}
-        <li>
-            <p>{{ message.userId }}</p>
-            <p>{{message.message}}</p>
-            <p>{{message.datetime|date('Y-m-d h:m:s') }}</p>
 
-        </li>
-    {% endfor %}
-    </ul>
-    </div>
-    <div>
-        <h1>Message</h1>
-        {{ form (form) }}
-
+    <div class="container home">
+        <div class="row">
+            <div>
+                <h4>Mini Chat</h4></div>
+            <div class="chatHeader">
+            <i class="fa fa-user-o fa-3x" aria-hidden="true"></i>
+                <h6 class="showUsername">username</h6>
+            <p class="showBaseline">baseline</p>
+            </div>
+            <div class="listMessages">
+            Liste de messages
+            </div>
+            <div class="typeMessage">
+                {{ form(form) }}
+            </div>
+        </div>
     </div>
 {% endblock %}
