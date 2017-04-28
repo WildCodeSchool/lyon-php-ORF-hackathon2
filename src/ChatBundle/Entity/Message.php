@@ -111,8 +111,6 @@ class Message
         return $this->datetime;
     }
 
-
-
     /**
      * Set userId
      *
