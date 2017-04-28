@@ -3,46 +3,70 @@
 namespace ChatBundle\Controller;
 
 use ChatBundle\Entity\Message;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use ChatBundle\Form\Chat;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class ChatController extends Controller
 {
+
     /**
      * @param Request $request
-     * @Route("/chat", name="chat")
+     * @return Response
+     * @Route("/chat", name="add_message")
      * @return \Symfony\Component\HttpFoundation\Response
      */
 
-    public function indexAction(Request $request)
+    public function addAction(Request $request)
     {
-        $message = new Message();
+        $listMessage = $this->getDoctrine()->getRepository('ChatBundle:Message')->findAll();
 
-        $form = $this->createFormBuilder($message)
-            ->add('message', TextType::class)
-            ->add('submit', SubmitType::class, array('label' => 'Enter'))
-            ->getForm();
+        $message = new Message();
+        $em = $this->getDoctrine()->getManager();
+        $form = $this->createForm(Chat::class, $message);
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $user = $form->getData();
+        if ($form->isSubmitted() && $form  ->isValid()){
+            $em->persist($message);
+            $em->flush();
+            return $this->redirectToRoute('add_message');
+        }
+
+        $chatContent = $this->getDoctrine()->getRepository('ChatBundle:User')->findAll();
+
+        return $this->render('@Chat/Default/chat.html.twig', [
+            'form'      =>  $form->createView(),
+            'chatcontent' => $chatContent,
+            'message' => $message,
+            'listMessage' => $listMessage,
+
+        ]);
 
 
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($user);
-        $em->flush();
+        // SESSIONS MANAGEMENT
+        $listMessage = $this->getDoctrine()->getRepository('ChatBundle:Message')->findAll();
 
-        return $this->redirectToRoute('chat');
+        $session = $request->getSession();
+        $session->start();
+
+            // set and get session attributes
+        $session->set('name', '{{ user.name }}');
+        $user = $session->get('name');
+
+            // set flash messages
+        $session->getFlashBag()->add('notice', 'Session ouverte : {{ user.name }} ');
+
+        // retrieve messages
+        foreach ($session->getFlashBag()->get('notice', array()) as $message) {
+            echo '<div class="flash-notice">'.$message.'</div>';
+        }
+
+
+
     }
 
-        return $this->render('ChatBundle:Default:chat.html.twig',
-            array(
-                'form' => $form->createView(),
-            ));
-    }
 }
-

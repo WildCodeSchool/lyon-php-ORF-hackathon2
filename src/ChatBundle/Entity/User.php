@@ -2,6 +2,7 @@
 
 namespace ChatBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToMany;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -26,11 +27,12 @@ class User
     /**
      * @var string
      *
-     * @OneToMany(targetEntity="ChatBundle\Entity\Message", mappedBy="user")
+     * @OneToMany(targetEntity="ChatBundle\Entity\Message", mappedBy="user_id", cascade={"persist"})
      *
      * @ORM\Column(name="name", type="string", length=45)
      */
     private $name;
+
 
     /**
      * @var string
@@ -128,4 +130,9 @@ class User
     {
         return $this->picture;
     }
+
+    /**
+     * User constructor.
+     */
+
 }
