@@ -39,21 +39,7 @@ class DefaultController extends Controller
         $em->flush();
 
         return $this->redirectToRoute('add_message');
-    }
 
-        $session = $request->getSession();
-        $session->start();
-
-        // set and get session attributes
-        $session->set('name', 'roxanne');
-        $user = $session->get('name');
-
-        // set flash messages
-        $session->getFlashBag()->add('notice', 'Session ouverte');
-
-        // retrieve messages
-        foreach ($session->getFlashBag()->get('notice', array()) as $message) {
-            echo '<div class="flash-notice">'.$message.'</div>';
         }
 
         return $this->render('ChatBundle:Default:index.html.twig',
@@ -61,6 +47,7 @@ class DefaultController extends Controller
                 'form' => $form->createView(),
                 'user' => $user
             ));
+
     }
 }
 
