@@ -21,6 +21,7 @@ class ChatController extends Controller
 
     public function addAction(Request $request)
     {
+
         $listMessage = $this->getDoctrine()->getRepository('ChatBundle:Message')->findAll();
 
         $message = new Message();
@@ -36,13 +37,14 @@ class ChatController extends Controller
             $message->setUser($name);
             $em->persist($message);
             $em->flush();
-            return $this->redirectToRoute('add_message');
+            //return $this->redirectToRoute('add_message');
         }
 
         return $this->render('@Chat/Default/chat.html.twig', [
             'form' => $form->createView(),
-            'listMessages' => $listMessage,
-            'name' => $name
+            'listMessage' => $listMessage,
+            'name' => $name,
+
         ]);
     }
 }
